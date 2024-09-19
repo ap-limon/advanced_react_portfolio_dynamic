@@ -1,0 +1,33 @@
+i have to create a advenced react portfolio
+Nabbar:
+it will have theme switcher light-mode and darkmode using the react state. there will also be a brand which will be my name, and navigation links are home, about, projects, contacts with the links of each section when clicked to the nav link it will smoothly scroll to the respective section. it the buttons will be animated with hover and active(means when it will lead me to a section the respective button will be active with changing background color and color) status and on hovering ther will be a underline and scaling anmation. also when the window load the the navbar will fadeinto the view. 
+in home section, it will serve as a landing page of my portfolion containing a hero banner with my name, a short introduction summarizing who i am,(please suggest what kind of picture can i use there) and it will have 2 call to action buttons(projects & contact me). in style make it visually appealing with glassmorphisom and sroll into view animation with some fade into view animation.
+the about section will give a breif overview of me contianing my journey in web development, passions, and why to choose me as a developer with a small profile picture and skills and technologies i am specialized in. this section will also apply scroll into view anmation such fade in animation or anyother animation you feel better.
+the tricky part is this project section, it will will have around 15 dummy projects on web development, seo, and mobile apps. there awill also be a search bar and a category filter options. in the search bar, it will filter the projects with their title, descriptions, or technologies. react context will be used here. by the way it should not have any scroll into view animation but the project will have some hover animation with background color and scale property. also when the projects is clicked it will open a modal with more detailed inofrmation about the projects like title, descriptions, technology used, build duration, and live link). also there will be a close button or click outside the modal it will be closed.
+the next is the contact section with the footer part, to contact there will be a form containing name, email, subject, and message. there will also be my social links tocontact with. also add so some animation while hovering ro active input areas.
+
+well there will be local storage will be used to remeber the theme preference of the user and will relode the page again with their saved preferences.
+and use react router to create a different routes for the sections.
+
+well technologies to be used in this projects will be html, sass, react, webpack
+
+these fonts will be used respectively in the fonts
+nabvar fonts: poppins;
+section heading fonts: merriweather;
+paragraph: raleway;
+
+the themes will be based on this colors i am providing
+Light mode color: 
+white: #fff
+vivid-sky-blue: #07c8f9
+pictone-blue: #09a6f3
+bleu-de-france: #0a85ed
+royal-blue: #0c63e7
+palatinate-blue: #0D41e1
+Dark mode color:
+black: #000
+yale-blue: #00346b
+berkeley-blue: #002c5c
+oxford-blue: #00264f
+oxford-blue: #001933
+rich-black: #001021
