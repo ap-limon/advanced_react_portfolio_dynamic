@@ -1,0 +1,93 @@
+//Mixin for additional typography with additional breakpoints
+@mixin responsive-font(
+  $size,
+  $min-size: 12px,
+  $tablet-size: 14px,
+  $max-size: 24px
+) {
+  font-size: $size;
+
+  @media (max-width: 320px) {
+    font-size: $min-size;
+  }
+
+  @media (min-width: 321px) and (max-width: 768px) {
+    font-size: $tablet-size;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: $max-size;
+  }
+}
+
+//mixin for flex layouts
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+//mixin for fade-in animation with direction and distance
+@mixin fadeIn(
+  $direction: null,
+  $distance: 20px,
+  $duration: 0.8s,
+  $ease: ease-in-out
+) {
+  opacity: 0;
+  transform: translateX(0) translateY(0);
+
+  //handle different direction
+  @if $direction == "left" {
+    transform: translateX(-#{$distance});
+  } @else if $direction == "right" {
+    transform: translateX(#{$distance});
+  } @else if $direction == "up" {
+    transform: translateY(-#{$distance});
+  } @else if $direction == "down" {
+    transform: translateY(#{$distance});
+  }
+
+  animation: fadeIn #{$duration} #{$ease} forwards;
+}
+
+//mixin for fade-out animation with direction and duration
+@mixin fadeOut(
+  $direction: null,
+  $distance: 20px,
+  $duration: 0.8s,
+  $ease: ease-in-out
+) {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+
+  //handle different directions for fade-out
+  @if $direction == "left" {
+    transform: translateX(#{$distance});
+  } @else if $direction == "right" {
+    transform: translateX(-#{$distance});
+  } @else if $direction == "up" {
+    transform: translateY(#{$distance});
+  } @else if $direction == "down" {
+    transform: translateY(-#{$distance});
+  }
+
+  animation: fadeOut #{$duration} #{$ease} forwards;
+}
+
+//keyframes for fade-in
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+//keyframes for fade-out
+@keyframes fadeOut {
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}

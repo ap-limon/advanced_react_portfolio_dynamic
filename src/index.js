@@ -1,22 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import "./styles/main.scss";
-import { createRoot } from "react-dom/client";
+import Navbar from "./components/Navbar";
 
 const App = () => {
     return (
-      <div>
-        <h1>Hello, World!</h1>
-      </div>
+      <>
+        <Navbar />
+      </>
     );
 };
 
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-
-root.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-)
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
