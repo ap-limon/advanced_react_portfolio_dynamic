@@ -1,0 +1,90 @@
+@import "../mixin";
+@import "../variable";
+
+.home {
+    @include flex-center();
+    height: 100vh;
+    position: relative;
+    padding: $spacing-lg;
+    background: var(--background);
+    color: var(--text-color);
+    @include fadeIn("up", 30px, 1.2s, ease-in-out);
+
+    .hero-card {
+        backdrop-filter: blur(15px);
+        background: rgba($color: #fff, $alpha: .5);
+        border-radius: 20px;
+        padding: $spacing-lg;
+        box-shadow: 0 8px 32px rgba($color: #000000, $alpha: .5);
+        @include flex-center(row);
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .text-content {
+            max-width: 60%;
+            padding-right: $spacing-lg;
+
+            h1 {
+                font-size: $heading-font-size;
+                color: var(--parimary-color);
+                @include responsive-font(3rem, 2rem, 2.5rem, 4rem);
+            }
+
+            p {
+                font-size: $paragraph-font-size;
+                margin-top: $spacing-ms;
+                color: var(--text-color);
+            }
+
+            .cta-buttons {
+                margin-top: $spacing-lg;
+
+                a {
+                    text-decoration: none;
+                    font-size: $font-large;
+                    padding: $spacing-sm $spacing-lg;
+                    border-radius: 50px;
+                    background-color: var(--parimary-color);
+                    color: var(--text-color);
+                    transition: background-color .3s, transform .3s ease;
+                    box-shadow: 0 4px 15px rgba($color: #000000, $alpha: .4);
+
+                    &:hover {
+                        background-color: var(--hover-color);
+                        transform: scale(1.1);
+                    }
+                }
+
+                a + a {
+                    margin-left: $spacing-lg;
+                }
+            }
+        }
+
+        .hero-image {
+            max-width: 300px;
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+//dark and light mode colors 
+.light-mode {
+    --background: #f8f8f8;
+    --text-color: #333;
+    --primary-color: $light-mode-primary;
+}
+
+.dark-mode {
+    --background: #121212;
+    --text-color: #fafafa;
+    --primary-color: $dark-mode-parimary;
+}

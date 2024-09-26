@@ -39,12 +39,13 @@ const Navbar = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting) { 
+            console.log(entry.target.id);
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.7 }
     );
 
     //observe the sections
@@ -56,9 +57,16 @@ const Navbar = () => {
     //Navbar scroll up visibility handler
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-      setIsScrollingUP(currentScroll < lastScroll);
-      lastScroll = currentScroll;
+      if (currentScroll > lastScroll) {
+        //scrolling down - hide navbar
+        setIsScrollingUP(false);
+      } else if (currentScroll < lastScroll) {
+        //scrolling up - show navbar
+        setIsScrollingUP(true);
+      }
+      lastScroll = currentScroll; // update the lastScroll to current position
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -85,39 +93,47 @@ const Navbar = () => {
       }`}
     >
       <div className="navbar-container">
-        <div className="logo">APL</div>
+        <div className="logo">
+          <span className="letter">A</span>
+          <span className="letter">P</span>
+          <span className="letter">L</span>
+        </div>
         <ul className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
-          <li className={activeSection === "home" ? "active" : ""}>
+          <li>
             <a
               href="#home"
-              className="nav-link"
+              className={`nav-link ${activeSection === "home" ? "active" : ""}`}
               onClick={(e) => handleNavClick(e, "#home")}
             >
               Home
             </a>
           </li>
-          <li className={activeSection === "about" ? "active" : ""}>
+          <li>
             <a
               href="#about"
-              className="nav-link"
+              className={`nav-link ${
+                activeSection === "about" ? "active" : ""
+              }`}
               onClick={(e) => handleNavClick(e, "#about")}
             >
               About Me
             </a>
           </li>
-          <li className={activeSection === "projects" ? "active" : ""}>
+          <li>
             <a
               href="#projects"
-              className="nav-link"
+              className={`nav-link ${
+                activeSection === "projects" ? "active" : ""
+              }`}
               onClick={(e) => handleNavClick(e, "#projects")}
             >
               Projects
             </a>
           </li>
-          <li className={activeSection === "contact" ? "active" : ""}>
+          <li>
             <a
               href="#contact"
-              className="nav-link"
+              className={`nav-link ${activeSection === "contact" ? "active" : ""}`}
               onClick={(e) => handleNavClick(e, "#contact")}
             >
               Contact

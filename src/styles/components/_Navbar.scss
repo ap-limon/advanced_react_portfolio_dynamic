@@ -7,12 +7,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: $padding-base;
+  padding: $spacing-xs $padding-base;
   background-color: $light-mode-background;
   justify-content: space-between;
   z-index: 1000;
   opacity: 0;
-  transition: opacity .5s ease-in-out, transform 0.5s ease-in-out, backgoud-color 0.3s;
+  transition:  transform 0.5s ease-in-out, backgoud-color 0.3s;
   box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.1);
 
   &.visible {
@@ -23,10 +23,9 @@
     @include fadeOut("up", 20px);
   }
 
-  &.fade-in {
-    @include fadeIn("down", 20px, 1s, ease-in);
-    opacity: 1;
-  }
+  // &.fade-in {
+  //   @include fadeIn("down", 20px, 1s, ease-in);
+  // }
 
   .navbar-container {
     @include flex-center();
@@ -38,9 +37,24 @@
 
   .logo {
     font-family: $font-poppins;
-    font-size: 2rem;
     font-weight: bold;
     color: $light-mode-primary;
+    @include flex-center();
+
+    .letter {
+      font-size: 2rem;
+      margin: 0 5px;
+      display: inline-block;
+      @include bounce(1.5s, 0s);
+
+      &:nth-child(2) {
+        @include bounce(1.5s, 0.2s);
+      }
+
+      &:nth-child(3) {
+        @include bounce(1.5s, 0.4s);
+      }
+    }
   }
 
   .nav-links {
@@ -58,7 +72,7 @@
         font-family: $font-raleway;
         font-size: 1.1rem;
         color: $text-dark;
-        padding: $spacing-sm $spacing-ms;
+        padding: $spacing-ms;
         transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
         //underline animation
@@ -68,7 +82,7 @@
           height: 2px;
           background-color: $light-mode-primary;
           left: 0;
-          bottom: 10px;
+          bottom: 2px;
           width: 100%;
           transform: scaleX(0);
           transition: transform 0.5s ease-out;
@@ -84,12 +98,13 @@
         }
 
         &.active {
-          background-color: &light-mode-primary;
+          background-color: $light-mode-primary;
           color: $text-light;
+          border-radius: 10%;
         }
 
         &.active::before {
-          width: 100%;
+          transform: scaleX(1);
         }
       }
     }
