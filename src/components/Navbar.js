@@ -60,6 +60,7 @@ const Navbar = () => {
       if (currentScroll > lastScroll) {
         //scrolling down - hide navbar
         setIsScrollingUP(false);
+        setIsLoaded(false);
       } else if (currentScroll < lastScroll) {
         //scrolling up - show navbar
         setIsScrollingUP(true);

@@ -15,8 +15,8 @@ html {
 //global styles
 body {
     font-family: $font-raleway;
-    background-color: $light-mode-background;
-    color: $dark-mode-background;
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
     transition: backgound-color .3s ease, color .3s ease;
 }
@@ -67,3 +67,5 @@ button {
     border: 1px solid red;
     padding: 85px $spacing-lg;
 }
+
+

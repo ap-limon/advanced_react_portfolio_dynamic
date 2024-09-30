@@ -1,11 +1,24 @@
-//Colors
+//Colors for light mode
 $light-mode-background: #fff;
-$light-mode-primary: #0a85ed;
+$light-mode-primary: #09a6f3;
+$light-mode-text: #111;
+$light-button-hover: #0c63e7;
+$light-button-click: #0a85ed;
+$light-link-hover: #07c8f9;
+$light-link-active: #0d41e1;
+$light-glass-background: rgba(7, 200, 249, .15);
+$light-gradient-background: linear-gradient(135deg, #0a85ed, #0c63e7);
+
+//colors for dark mode
 $dark-mode-background: #000;
 $dark-mode-primary: #00346b;
-$hover-color: #005fb3;
-$text-light: #fafafa;
-$text-dark: #333;
+$dark-mode-text: #fafafa;
+$dark-button-hover: #00264f;
+$dark-button-click: #002c5c;
+$dark-link-hover: #002c5c;
+$dark-link-active: #2a598b;
+$dark-glass-background: rgba(0, 52, 107, .15);
+$dark-gradient-background: linear-gradient(135deg, #001021, #001933);
 
 //typography
 $font-poppins: "Poppins", sans-serif;
@@ -25,3 +38,36 @@ $spacing-ms: .5rem;
 $spacing-sm: .75rem;
 $spacing-lg: 1.5rem;
 $spacing-xl: 2rem;
+
+
+.light-mode {
+    --nav-background: #{$light-mode-background};
+    --nav-text-color: #{$light-mode-text};
+    --nav-link-active: #{$light-link-active};
+    --nav-mobile: #{rgba($light-glass-background, .65)};
+
+    --home-background: #{$light-mode-background};
+    --hb-img-glass-bg: #{$light-glass-background};
+
+    --button-background: #{$light-mode-primary};
+    --button-hover: #{$light-button-hover};
+    --buton-active: #{$light-button-click};
+    --background-color: #{$light-mode-background};
+    --text-color: #{$light-mode-text};
+}
+
+.dark-mode {
+    --nav-background: #{$dark-mode-background};
+    --nav-text-color: #{$dark-mode-text};
+    --nav-link-active: #{$dark-link-active};
+    --nav-mobile: #{rgba($dark-glass-background, .65)};
+
+    --home-background: #{$dark-mode-background};
+    --hb-img-glass-bg: #{$dark-glass-background};
+
+    --button-background: #{$dark-mode-primary};
+    --button-hover: #{$dark-button-hover};
+    --buton-active: #{$dark-button-click};
+    --background-color: #{$dark-mode-background};
+    --text-color: #{$dark-mode-text};
+}
