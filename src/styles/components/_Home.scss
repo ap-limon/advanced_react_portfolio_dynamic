@@ -10,11 +10,10 @@
     @include flex-center();
     @include fadeIn("up", 20px, 1s, ease-in-out);
     text-align: justify;
-    padding-top: 85px;
     gap: 50px;
 
     @media (max-width: 768px) {
-      gap: 25px;
+      gap: 15px;
     }
   
     @media (max-width: 480px) {
@@ -64,7 +63,7 @@
 
     .btn {
       color: var(--text-color);
-      padding: $spacing-sm $spacing-lg;
+      padding: $spacing-sm;
       font-family: $font-poppins;
       background-color: var(--button-background);
       @include responsive-font(1rem, .8rem, .9rem, 1rem);
