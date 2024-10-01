@@ -5,6 +5,8 @@
   padding: $spacing-xl;
   background: var(--home-background);
   @include flex-center();
+  height: calc(100vh - 85px);
+  margin-top: 85px;
 
   .hero-content {
     @include flex-center();
@@ -58,7 +60,7 @@
   }
 
   .cta-buttons {
-    display: flex;
+    @include flex-center();
     gap: 1rem;
 
     .btn {
