@@ -5,7 +5,6 @@
   padding: $spacing-xl;
   background: var(--home-background);
   @include flex-center();
-  min-height: calc(100vh - 85px);
 
   .hero-content {
     @include flex-center();
