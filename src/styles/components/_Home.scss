@@ -5,10 +5,9 @@
   padding: $spacing-xl;
   background: var(--home-background);
   @include flex-center();
-  height: calc(100vh - 85px);
-  margin-top: 85px;
 
   .hero-content {
+    padding-top: 95px;
     @include flex-center();
     @include fadeIn("up", 20px, 1s, ease-in-out);
     text-align: justify;
@@ -65,7 +64,7 @@
 
     .btn {
       color: var(--text-color);
-      padding: $spacing-sm;
+      padding: $spacing-xs $spacing-sm ;
       font-family: $font-poppins;
       background-color: var(--button-background);
       @include responsive-font(1rem, .8rem, .9rem, 1rem);
