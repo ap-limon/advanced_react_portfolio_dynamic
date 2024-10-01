@@ -11,10 +11,10 @@
     @include flex-center();
     @include fadeIn("up", 20px, 1s, ease-in-out);
     text-align: justify;
+    padding-top: 85px;
     gap: 50px;
 
     @media (max-width: 768px) {
-      padding: $spacing-lg;
       gap: 25px;
     }
   
